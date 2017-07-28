@@ -1,3 +1,7 @@
+deplicate
+=========
+
+
 Table of contents
 -----------------
 
@@ -283,30 +287,30 @@ API Reference
 
 ### Classes
 
-- duplicate.`Cache`(maxlen=`DEFAULT_MAXLEN`)
+- duplicate.`Cache`(_maxlen_=`DEFAULT_MAXLEN`)
   - **Description**: Internal shared cache class.
   - **Return**: Self instance.
   - **Parameters**:
     - `maxlen` – Maximum number of entries stored.
   - **Proprieties**:
-    - `DEFAULT_MAXLEN`:
+    - `DEFAULT_MAXLEN`
       - **Description**: Default maximum number of entries stored.
       - **Value**: `128`.
   - **Methods**:
     - ...
-    - `clear`(self):
+    - `clear`(_self_)
       - **Description**: Clear the cache if not acquired by any object.
       - **Return**: `True` if went cleared, otherwise `False`.
       - **Parameters**: None.
 
-- duplicate.`Deplicate`(paths,
-    minsize=`DEFAULT_MINSIZE`,
-    maxsize=`DEFAULT_MAXSIZE`,
-    include=`None`, exclude=`None`,
-    comparename=`False`, comparemtime=`False`, comparemode=`False`,
-    recursive=`True`, followlinks=`False`, scanlinks=`False`,
-    scanempties=`False`,
-    scansystem=`True`, scanarchived=`True`, scanhidden=`True`)
+- duplicate.`Deplicate`(_paths_,
+    _minsize_=`DEFAULT_MINSIZE`,
+    _maxsize_=`DEFAULT_MAXSIZE`,
+    _include_=`None`, _exclude_=`None`,
+    _comparename_=`False`, _comparemtime_=`False`, _comparemode_=`False`,
+    _recursive_=`True`, _followlinks_=`False`, _scanlinks_=`False`,
+    _scanempties_=`False`,
+    _scansystem_=`True`, _scanarchived_=`True`, _scanhidden_=`True`)
   - **Description**: Duplicate main class.
   - **Return**: Self instance.
   - **Parameters**:
@@ -331,20 +335,20 @@ API Reference
     - `scanarchived` – _(optional)_ Scan archived files.
     - `scanhidden` – _(optional)_ Scan hidden files.
   - **Proprieties**:
-    - `DEFAULT_MINSIZE`:
+    - `DEFAULT_MINSIZE`
       - **Description**: Minimum size of files to include in scanning
         (in bytes).
       - **Value**: `102400`.
-    - `DEFAULT_MAXSIZE`:
+    - `DEFAULT_MAXSIZE`
       - **Description**: Maximum size of files to include in scanning
         (in bytes).
       - **Value**: `107374182400`.
-    - `result`:
+    - `result`
         - **Description**: Result of `find` or `purge` invocation
           (by default is `None`).
         - **Value**: `duplicate.ResultInfo`.
   - **Methods**:
-    - `find`(self, onerror=`None`, notify=`None`):
+    - `find`(_self_, _onerror_=`None`, _notify_=`None`)
       - **Description**: Find duplicate files.
       - **Return**: None.
       - **Parameters**:
@@ -352,7 +356,8 @@ API Reference
           `exception` and `filename`, when an error occurs during file
           scanning or filtering.
         - `notify` – _(internal)_ Notifier callback.
-    - `purge`(self, trash=`True`, ondel=`None`, onerror=`None`, notify=`None`):
+    - `purge`(_self_,
+        _trash_=`True`, _ondel_=`None`, _onerror_=`None`, _notify_=`None`)
       - **Description**: Find and purge duplicate files.
       - **Return**: None.
       - **Parameters**:
@@ -365,7 +370,7 @@ API Reference
           scanning, filtering or purging.
         - `notify` – _(internal)_ Notifier callback.
 
-- duplicate.`ResultInfo`(dupinfo, delduplist, scnerrlist, delerrors)
+- duplicate.`ResultInfo`(_dupinfo_, _delduplist_, _scnerrlist_, _delerrors_)
   - **Description**: Duplicate result class.
   - **Return**: `collections.namedtuple`(`'ResultInfo'`,
     `'dups deldups duperrors scanerrors delerrors'`).
@@ -380,15 +385,15 @@ API Reference
 
 ### Functions
 
-- duplicate.`find`(*paths,
-    minsize=`duplicate.Deplicate.DEFAULT_MINSIZE`,
-    maxsize=`duplicate.Deplicate.DEFAULT_MAXSIZE`,
-    include=`None`, exclude=`None`,
-    comparename=`False`, comparemtime=`False`, comparemode=`False`,
-    recursive=`True`, followlinks=`False`, scanlinks=`False`,
-    scanempties=`False`,
-    scansystem=`True`, scanarchived=`True`, scanhidden=`True`,
-    onerror=`None`, notify=`None`)
+- duplicate.`find`(_*paths_,
+    _minsize_=`duplicate.Deplicate.DEFAULT_MINSIZE`,
+    _maxsize_=`duplicate.Deplicate.DEFAULT_MAXSIZE`,
+    _include_=`None`, _exclude_=`None`,
+    _comparename_=`False`, _comparemtime_=`False`, _comparemode_=`False`,
+    _recursive_=`True`, _followlinks_=`False`, _scanlinks_=`False`,
+    _scanempties_=`False`,
+    _scansystem_=`True`, _scanarchived_=`True`, _scanhidden_=`True`,
+    _onerror_=`None`, _notify_=`None`)
   - **Description**: Find duplicate files.
   - **Return**: `duplicate.ResultInfo`.
   - **Parameters**:
@@ -417,15 +422,15 @@ API Reference
       filtering.
     - `notify` – _(internal)_ _(optional)_ Notifier callback.
 
-- duplicate.`purge`(*paths,
-    minsize=`duplicate.Deplicate.DEFAULT_MINSIZE`,
-    maxsize=`duplicate.Deplicate.DEFAULT_MAXSIZE`,
-    include=`None`, exclude=`None`,
-    comparename=`False`, comparemtime=`False`, comparemode=`False`,
-    recursive=`True`, followlinks=`False`, scanlinks=`False`,
-    scanempties=`False`,
-    scansystem=`True`, scanarchived=`True`, scanhidden=`True`,
-    trash=`True`, ondel=`None`, onerror=`None`, notify=`None`)
+- duplicate.`purge`(_*paths_,
+    _minsize_=`duplicate.Deplicate.DEFAULT_MINSIZE`,
+    _maxsize_=`duplicate.Deplicate.DEFAULT_MAXSIZE`,
+    _include_=`None`, _exclude_=`None`,
+    _comparename_=`False`, _comparemtime_=`False`, _comparemode_=`False`,
+    _recursive_=`True`, _followlinks_=`False`, _scanlinks_=`False`,
+    _scanempties_=`False`,
+    _scansystem_=`True`, _scanarchived_=`True`, _scanhidden_=`True`,
+    _trash_=`True`, _ondel_=`None`, _onerror_=`None`, _notify_=`None`)
   - **Description**: Find and purge duplicate files.
   - **Return**: `duplicate.ResultInfo`.
   - **Parameters**:
