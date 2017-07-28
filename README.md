@@ -1,7 +1,3 @@
-deplicate
-=========
-
-
 Table of contents
 -----------------
 
@@ -278,7 +274,7 @@ API Reference
 
 ### Exceptions
 
-- duplicate.`SkipException`(*args, **kwargs)
+- duplicate.`SkipException`(_*args_, _**kwargs_)
   - **Description**: Raised to skip file scanning, filtering or purging.
   - **Return**: Self instance.
   - **Parameters**: Same as built-in `Exception`.
